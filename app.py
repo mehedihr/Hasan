@@ -143,9 +143,6 @@ def prediction():
         
         #make prediction
         pred = model.predict(data_scaled)
-#         pred_class = np.argmax(pred)
-#         apr_prob = pred[0]*100
-#         den_proba = pred[1]*100
         
         #Result of the prediction
         if pred ==1:
