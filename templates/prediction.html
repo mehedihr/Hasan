@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Credit Default Prediction</title>
+     <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/swiper.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/magnific-popup.css')}}" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="{{url_for('static', filename='images/logo.png')}}">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="/"><img src="{{url_for('static', filename='images/logo.png')}}" alt="alternative"></a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+         <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="/"><img src="{{url_for('static', filename='images/logo.png')}}"		alt="alternative"></a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#header">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#Predict">Prediction</a>
+                </li>
+           
+        </div>
+    </nav> <!-- end of navbar -->
+	    </nav> <!-- end of navbar -->
+
+    <!-- end of navbar -->
+
+
+    <!-- Header -->
+    <header id="header" class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Candidate Credit Default Prediction</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <!-- Breadcrumbs -->
+    <div class="ex-basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumbs">
+                        <a href="/">Home</a><i class="fa fa-angle-double-right"></i><span>Candidate Credit Default Prediction</span>
+                    </div> <!-- end of breadcrumbs -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of breadcrumbs -->
+
+
+    <!-- Terms Content -->
+    <div id="Predict" class="ex-basic-2">
+		<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp Please Fill in the details to get your chances of Loan Approval.</h4>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+							<!-- Contact Form -->
+								<form id="contactForm" data-toggle="validator" data-focus="false" action="{{ url_for('prediction') }}" method="POST">
+								<div class="form-group">
+									<label class="label-control" for="er_credit_open_date">Earliest Credit Line Open Date</label>
+									<input name="er_credit_open_date" type="date" class="form-control-input" id="er_credit_open_date">
+									<div class="help-block with-errors"></div>
+								</div>
+
+								<div class="form-group">
+									<label class="label-control" for="sub_grade">Customer Credit Sub-Grade:</label>
+									<input name="sub_grade" list="subgrade" class="form-control-input" id="sub_grade" required>
+									<datalist id="subgrade">
+									<option value="A1">
+									<option value="A2">
+									<option value="A3">
+									<option value="A4">
+									<option value="A5">
+									<option value="B1">
+									<option value="B2">
+									<option value="B3">
+									<option value="B4">
+									<option value="B5">
+									<option value="C1">
+									<option value="C2">
+									<option value="C3">
+									<option value="C4">
+									<option value="C5">
+									<option value="D1">
+									<option value="D2">
+									<option value="D3">
+									<option value="D4">
+									<option value="D5">
+									<option value="E1">
+									<option value="E2">
+									<option value="E3">
+									<option value="E4">
+									<option value="E5">
+									<option value="F1">
+									<option value="F2">
+									<option value="F3">
+									<option value="F4">
+									<option value="F5">
+									<option value="G1">
+									<option value="G2">
+									<option value="G3">
+									<option value="G4">
+									<option value="G5">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>
+
+								<div class="form-group">
+									<label class="label-control" for="fico_range_high">Fico High Score</label>
+									<input name="fico_range_high" type="number" min="600" max="850" class="form-control-input" id="fico_range_high" required>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<label class="label-control" for="loan_amnt">Required Loan Amount ($500 to $40,000):</label>
+									<input name="loan_amnt" class="form-control-input" type="number" min="500" max="40000" id="loan_amnt" required>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<label class="label-control" for="term">Term (in Months)</label>
+									<input name="term" list="terms" class="form-control-input" type="number" min="36" max="60" id="term" required>
+									<datalist id="terms">
+									<option value="36">
+									<option value="60">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<label class="label-control" for="emp_length">Borrower's Employment Length:</label>
+									<input name="emp_length" list="emplength" class="form-control-input" id="emp_length" required>
+									<datalist id="emplength">
+									<option value="Less than 1 Year">
+									<option value="1 Year">
+									<option value="2 Years">
+									<option value="3 Years">
+									<option value="4 Years">
+									<option value="5 Years">
+									<option value="6 Years">
+									<option value="7 Years">
+									<option value="8 Years">
+									<option value="9 Years">
+									<option value="10+ Years">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>
+
+								<div class="form-group">
+									<label class="label-control" for="dti">Current Debt to Income Ratio (0 to 100):</label>
+									<input name="dti" class="form-control-input" type="number" min="0" max="40" id="dti" required>
+									<div class="help-block with-errors"></div>
+								</div>
+								
+							
+                    </div> <!-- end of contact form -->
+                </div> 	<!-- end of text-container -->
+				                <div class="col-lg-6">
+                    <div class="text-container">
+							<!-- Contact Form -->
+								<div class="form-group">
+									<label class="label-control" for="home_ownership">Current Home Ownership</label>
+									<input name="home_ownership" list="homes" class="form-control-input" required select>
+									<datalist id="homes">
+									<option value="MORTGAGE">
+									<option value="RENT">
+									<option value="OWN">
+									<option value="ANY">
+									<option value="OTHER">
+									<option value="NONE">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<label class="label-control" for="annual_inc">Candidate Current Annual Income:</label>
+									<input name="annual_inc" type="number" min="0" max="1000000" class="form-control-input" id="annual_inc" required>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<label class="label-control" for="mort_acc">Number of Mortgage Accounts:</label>
+									<input name="mort_acc" type="number" class="form-control-input" id="mort_acc" required min="0" max="12">
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<label class="label-control" for="verification_status">Verification Status</label>
+									<input name="verification_status" list="ver_list" class="form-control-input" required select>
+									<datalist id="ver_list">
+									<option value="Verified">
+									<option value="Not Verified">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<label class="label-control" for="application_type">Application Type</label>
+									<input name="application_type" list="app_type" class="form-control-input" required select>
+									<datalist id="app_type">
+									<option value="Individual">
+									<option value="Joint">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>	
+								
+								<div class="form-group">
+									<label class="label-control" for="revol_util">Credit used relative to all available revolving credit:</label>
+									<input name="revol_util" type="number" min="0" max="110" class="form-control-input" id="revol_util" required>
+									<div class="help-block with-errors"></div>
+								</div>
+
+								<div class="form-group">
+									<label class="label-control" for="pub_rec_bankruptcies">Previous Bankruptcies</label>
+									<input name="pub_rec_bankruptcies" list="pubrec" class="form-control-input" required select>
+									<datalist id="pubrec">
+									<option value="Yes">
+									<option value="No">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>	
+
+								<div class="form-group">
+									<label class="label-control" for="debt_settlement_flag">Debt Settlement Flag</label>
+									<input name="debt_settlement_flag" list="flag" class="form-control-input" required select>
+									<datalist id="flag">
+									<option value="Yes">
+									<option value="No">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>	
+	
+								
+                    </div> <!-- end of contact form -->
+					</div> 	<!-- end of text-container -->
+                    <button type="submit" class="form-control-submit-button">Calculate Prediction</button>
+					</form>
+					</div> <!-- end of container -->
+				<div class="result" align="center">
+						{% if result %}
+						{% for variable, value in original_input.items() %}
+						<br><b>{{ variable }}</b> : {{ value }}
+						{% endfor %}
+						<br>
+						<br> Credit Decision:
+						<p style="font-size:20px">{{ result }}</p>
+						{% endif %}
+				</div>
+		</div>
+    </div> <!-- end of ex-basic -->
+    <!-- end of terms content -->
+
+
+    <!-- Footer -->
+    <div id=contact class="footer">
+        <div class="container">
+			<h3>Developed by:</h4>
+            <div class="row">
+			<img class="card-image" src="{{url_for('static', filename='images/our.png')}}"  width="300" height="300" alt="alternative">
+
+                <div class="col-md-6">
+                    <div class="text-container about">
+                        <h4 class="white"> Md Mehedi Hasan</h2>
+						<p class="white">M.Sc Operations Research and Business Analytics</p>
+						<p class="white">Otto-Von-Guericke University Magdeburg, Germany</p>
+						<p class="white">Email: md2.hasan@st.ovgu.de </p>
+                        <h4 class="white"> Md Najmul Sharkar</h2>
+						<p class="white">M.Sc Operations Research and Business Analytics</p>
+						<p class="white">Otto-Von-Guericke University Magdeburg, Germany</p>
+						<p class="white">Email: md.sharkar@st.ovgu.de </p>
+                    
+					</div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-md-2">
+                    <div class="text-container">
+                        <h4>Connect</h4>
+                        <ul class="list-unstyled li-space-lg white">
+                            <li>
+                                <a class="white" href="https://www.linkedin.com/in/mehedimh/">LinkedIn-Mehedi</a>
+                                <a class="white" href="https://www.linkedin.com/in/sharkar/">LinkedIn-Najmul</a>
+                            </li>
+                            <li>
+                                <a class="white" href="https://github.com/mehedihr">Github</a>
+                            </li>
+
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                
+                
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+
+   <!-- end of copyright --> 
+    <!-- end of copyright -->
+    <!-- Scripts -->
+     <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+	<script src="{{url_for('static', filename='js/popper.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/jquery.easing.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/jquery.magnific-popup.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/morphext.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/isotope.pkgd.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/validator.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+	<script src="{{url_for('static', filename='js/scripts.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+	<script src="{{url_for('static', filename='js/swiper.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+
+</body>
+</html>
